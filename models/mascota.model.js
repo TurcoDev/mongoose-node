@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 const MascotaSchema = new mongoose.Schema({
   nombre:  String,
-  descripcion: String
+  descripcion: String,
+  consultas: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Consulta' }],
+  clienteId: { type: mongoose.Schema.Types.ObjectId, ref: 'Cliente' }
 });
 
 // Crear el modelo
